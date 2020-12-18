@@ -1,0 +1,221 @@
+* {
+    /* border: solid 1px black; */
+    font-family: calibri;
+    font-size: 20px;
+}
+
+#home {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+#main-doc {
+    
+    text-align: center;
+}
+
+#navbar {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    left: .5%;
+    top: 2.5%;
+    text-decoration: none;
+    width: 10%;
+}
+
+#navbar a {    
+    text-decoration: none;
+    color: black;
+}
+
+#navbar a:hover {    
+    text-decoration: none;
+    background-color: yellow;
+    font-weight: bold;
+    padding: 2%;
+}
+
+#navbar header {
+    height: 4%;
+    width: auto;
+}
+
+
+header {
+    background: yellow;
+    display: flex;
+    justify-content: center; 
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+main {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.main-section {
+    text-align: left;
+   
+}
+
+.main-section header {
+    
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-size: 24px;
+}
+
+ul {
+    display: flex;
+    flex-flow: column;
+    padding: 0;
+    width: 100%;
+}
+
+ol {
+    list-style-type: none;
+}
+
+#navbar li {
+    padding: 3%;
+    list-style-type: none;
+    font-size: 24px;
+}
+
+li {
+    list-style-type: square;
+    padding: .25%;
+    font-size: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+@media (min-width: 769px) {
+    .hamIcon {
+        display: none;
+    }
+    .mainMenu {
+        display: initial;
+    }
+}
+
+@media(max-width: 768px) {
+
+
+
+   
+    #navbar {
+        
+        top: 0%;
+        left: 0%;
+        background-color: yellow;
+        width: 100%;
+        text-align: center;
+        
+    }
+
+    #navbar header {
+        display: none;
+    }
+
+    .mainMenu {
+        display: none;
+    }
+    
+
+    .mainMenu.toggleCls {
+        display: block;
+        
+    }
+    
+    .hamIcon {
+        display: flex;
+        position: fixed;
+        top: 0%;
+        left: 0.5%;
+
+    }
+
+    .hamIcon h1 {
+        margin: 0;
+    }
+
+    header.title {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+    * {
+        max-width: 320px;
+    }
+
+
+   
+    #navbar {
+        
+        top: 0%;
+        left: 0%;
+        background-color: yellow;
+        width: 100%;
+        text-align: center;
+        
+        
+        
+        
+    }
+
+    #navbar header {
+        display: none;
+    }
+
+    .mainMenu {
+        display: none;
+    }
+    
+
+    .mainMenu.toggleCls {
+        display: block;
+        
+    }
+    
+    .hamIcon {
+        display: flex;
+        position: fixed;
+        top: 0%;
+        left: 0.5%;
+
+    }
+
+    .hamIcon h1 {
+        margin: 0;
+    }
+
+    header.title {
+        width: 100%;
+    }
+}
+
+

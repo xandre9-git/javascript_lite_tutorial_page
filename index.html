@@ -1,0 +1,425 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>JavaScript Lite Tutorial</title>
+</head>
+
+<body>
+    <div class="hamIcon" onclick="toggleClass()">
+        <h1 id="hamburger">&#9776;</h1>
+    </div>
+    <header class="title">
+        <h1>JavaScript Lite Tutorial</h1>
+    </header>    
+    <nav id="navbar">               
+            <header>JavaScript</header>
+            <ul class="mainMenu" onclick="toggleClass()">                
+                    <li><a href="#Intro" class="nav-link">Intro</a></li>
+                    <li><a href="#Numbers" class="nav-link">Numbers</a></li>
+                    <li><a href="#Strings" class="nav-link">Strings</a></li>
+                    <li><a href="#Other_Types" class="nav-link">Other Types</a></li>
+                    <li><a href="#Variables" class="nav-link">Variables</a></li>
+                    <li><a href="#Operators" class="nav-link">Operators</a></li>
+                    <li><a href="#Conditionals" class="nav-link">Conditionals</a></li>
+                    <li><a href="#Loops" class="nav-link">Loops</a></li>
+                    <li><a href="#Functions" class="nav-link">Functions</a></li>
+                    <li><a href="#Arrays" class="nav-link">Arrays</a></li>
+                    <li><a href="#Objects" class="nav-link">Objects</a></li>
+            </ul>
+       
+    </nav>
+    <script src="script.js"></script>
+
+    <main id="main-doc">
+        <section id="Intro" class="main-section">
+            <header>Intro</header>
+            <p>JavaScript is an object oriented programming language. It is a very popular language that is primarily
+                used to make pages more interactive. JavaScript is cross-platform and can be used client side or server
+                side. Anyone can learn JavaScript. This light introduction to JavaScript aims to help you better
+                understand the language. A few of JavaScript's notable features are seen below.</p>
+            <p><strong><em>Features</em></strong></p>
+            <ul>
+                <li>Dynamic Typing</li>
+                <li>Functional Style</li>
+                <li>Object-oriented</li>
+                <li>Aysnc Processing</li>
+                <li>Client/Server Side</li>
+                <li>Cross-platform</li>
+                <li>Prototype Based</li>
+            </ul>
+        </section>
+        <section id="Numbers" class="main-section">
+            <header>Numbers</header>
+            <p>JavaScript numbers are always stored as double precision, 64-bit, IEEE 754 floating point values. There
+                are no type definitions for float, integer, short, long etc. Numbers can be written with or without
+                decimals.</p>
+            <code>
+                <p>x = 42</p>
+                <p>y = 3.14</p>
+            </code>
+            <p>Integers can be written with up to 15 digits places with accuracy. 17 decimals is the maximum number
+                allowed. Floating point arithmetic can be inaccurate at times so be mindful. Numbers stored in strings
+                can be converted to integers using the built-in parseInt() function. The function parseFloat() can be
+                used to convert floating point numbers.</p>
+            <p>There is a special value, NaN, which stands for "Not a Number".</p>
+            <p><code>parseInt("Hi") // NaN</code></p>
+        </section>
+        <section id="Strings" class="main-section">
+            <header>Strings</header>
+            <p>Known as sequences of Unicode characters. They are used for storing and manipulating text. Strings have
+                values encased in single or double quotes. Quotes can be used inside the string as long as they do not
+                match the outside quotes encasing the string.</p>
+            <code>
+                <p> message = "It's possible to have a single quote inside of a string with double quotes."</p>
+                <p> message1 = 'This is "also" possible.'</p>
+            </code>
+            <p>The length of a string can be found using the length property.</p>
+            <code>
+                <p>message.length // 24</p>
+            </code>
+            <br>
+            <p><strong><em>Escape Characters</em></strong></p>
+            <p>Alternatively, escape characters can be used to insert single or double quotes amongst other special
+                characters inside of strings.<br>
+                <p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th width="25%">Code</th>
+                                <th>Result</th>
+                            </tr>
+                            <tr>
+                                <td>\\</td>
+                                <td>&emsp;&emsp;Backslash</td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td>\'</td>
+                                <td>&emsp;&emsp;Single quote</td>
+                            </tr>
+                            <tr>
+                                <td>\"</td>
+                                <td>&emsp;&emsp;Double quotes</td>
+                            </tr>
+                            <tr>
+                                <td>\b</td>
+                                <td>&emsp;&emsp;Backspace</td>
+                            </tr>
+                            <tr>
+                                <td>\f</td>
+                                <td>&emsp;&emsp;Form Feed</td>
+                            </tr>
+                            <tr>
+                                <td>\n</td>
+                                <td>&emsp;&emsp;New Line</td>
+                            </tr>
+                            <tr>
+                                <td>\r</td>
+                                <td>&emsp;&emsp;Carriage Return</td>
+                            </tr>
+                            <tr>
+                                <td>\t</td>
+                                <td>&emsp;&emsp;Horizontal Tabulator</td>
+                            </tr>
+                            <tr>
+                                <td>\v</td>
+                                <td>&emsp;&emsp;Vertical Tabulator</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </p>
+        </section>
+        <section id="Other_Types" class="main-section">
+            <header>Other Types</header>
+            <p><strong><em>Booleans</em></strong></p>
+            <p>Booleans have one of two values, true or false. The Boolean() function can be
+                used to test if an expression is true.</p>
+            <code>
+                Boolean(9 < 12) // returns True </code> <p>
+                    <ol>Boolean() Rules
+                        <li>false, 0, empty strings, NaN, null and undefined are false</li>
+                        <li>All other values are true.</li>
+                    </ol>
+
+                    <p><strong><em>Null</em></strong></p>
+                    <p>Null is a value that deliberately specified as a non-value.</p>
+                    <p><code>x = null<br>
+                            console.log(x) // null
+                        </code></p>
+                    <p><strong><em>Undefined</em></strong></p>
+                    <p>undefined specifies that a value has not been initialized. Undefined is a constant.</p>
+                    <p><code>let x
+                            <br>console.log(x) // undefined
+                        </code></p>
+
+        </section>
+        <section id="Variables" class="main-section">
+            <header>Variables</header>
+            <p>Variables are things that store values.</p>
+            <p>They can be declared in JavaScript with the <code>var</code>, <code>let</code>,and
+                <code>const</code> keywords. Var declarations can be accessed in the whole program or in functions
+                and can be updated or re-declared. Let variables can be updated but not re-declared. They are accessible
+                within its block and initialzed with undefined. Const cannot be re-declared or updated and are
+                block-scoped. A name is followed after the keyword to declare the variable. Let and const are more
+                commonly used as var opens up security vulnerabilities. Semicolons are used at the end of each line in
+                JS to signify end of statement.</p>
+
+            <p>Variables can be assigned a value using the = assignment operator.</p>
+
+            <p><code>var Hamburger;</code></p>
+            <p><code>const monthOfBirth = 'June';</code></p>
+            <p><code>let myVar = true;</code></p>
+
+        </section>
+        <section id="Operators" class="main-section">
+            <header>Operators</header>
+            <p>JavaScript has built-in operators. Operators are symbols between values that perform operations.
+            </p>
+            <p><em><strong>Arithmetic Operators</strong></em>
+                <p>Arithmetic operators include + addition, - subtraction, * multiplication, and / division. Another
+                    useful operator is the % remainder operator which returns the remainder of a quotient. Examples with
+                    descriptions are listed below.</p>
+                <p><code>let addition = 1 + 1; // 2</code></p>
+                <p><code>let subtraction = 2 - 3; // -1</code></p>
+                <p><code>let multiplication = 4 * 5; // 20</code></p>
+                <p><code>let division = 12 / 2; // 6</code></p>
+                <p><code>const remainder = 4 % 3 // 1</code></p>
+                <p><code>a * (b + c) // grouping</code></p>
+                <p><code>person.age // member</code></p>
+                <p><code>person[age] // member</code></p>
+                <p><code>!(a == b) // logical not</code></p>
+                <p><code>a != b // not equal</code></p>
+                <p><code>typeof a // type (number, object, function...)</code></p>
+                <p><code>x << 2 x>> 3 // minary shifting</code></p>
+                <p><code>a = b // assignment</code></p>
+                <p><code>a == b // equals</code></p>
+                <p><code>a != b // unequal</code></p>
+                <p><code>a === b // strict equal</code></p>
+                <p><code>a !== b // strict unequal</code></p>
+                <p><code>a < b a> b // less and greater than</code></p>
+                <p><code>a <= b a>= b // less or equal, greater or eq</code></p>
+                <p><code>a += b // a = a + b (works with - * %...)</code></p>
+                <p><code>a && b // logical and</code></p>
+                <p><code>a || b // logical or</code></p>
+
+                <p>A complete list of all expressions and operators can be found at the Mozilla Developer Network linked
+                    below.</p>
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" alt="mdn link"
+                        target="_blank">Link to
+                        MDN for All Expressions and Operators in
+                        JavaScript</a></p>
+        </section>
+
+        <section id="Conditionals" class="main-section">
+            <header>Conditionals</header>
+            <p>Conditionals determine whether code will run or not. They control the program. There are three basic
+                types of conditionals in JavaScript which are "If" statements, "Else" statements, and "Else if"
+                statements.</p>
+            <p>
+                <ul>
+                    <li>"If" statements test whether a statement is true and then executes code</li>
+                    <li>"Else" statements are for the same condition that proves false, followed by code execution</li>
+                    <li>"Else-if" selects a new test if first condtion is proven false.</li>
+                </ul>
+            </p>
+            <p><strong><em>If Statement</em></strong></p>
+            <p>if (2 > 1) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;*code to execute*<br>
+                }
+                <p><strong><em>Else Statement</em></strong></p>
+                <p>if (2 > 1) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;*code to execute*<br>
+                    } else {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;*code to execute when if is false*<br>
+                    }
+                    <p><strong><em>Else-if Statement</em></strong></p>
+                    <p>if (false) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;*code to execute*<br>
+                        } else if (true) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;*code to execute when statement is true*<br>
+                        } else {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;*code to execute*<br>
+                        }
+                    </p>
+        </section>
+        <section id="Loops" class="main-section">
+            <header>Loops</header>
+            <p>Loops offer a way to repeat code.</p>
+            <strong><em>For Loops</em></strong>
+            <p>A for loop executes until a specified condition proves false.</p>
+            <p>
+                <code>for ([initialExpression]; [conditionExpression]; [incrementExpression])
+                statement</code>
+            </p>
+            <strong><em>Do...While Loops</em></strong>
+            <p>Do while loops execute repeatedly until certain condition proves false. One statement is always executed
+                before checking of condition.
+                before running the while loop.</p>
+            <p><code>
+                    <pre>do
+  statement
+while (condition);</pre></code></p>
+            <strong><em>While Loops</em></strong>
+            <p>While loops execute statements after finding a condition true. The condition is tested before the
+                statement is run.</p>
+            <p>
+                <pre><code>while (condition)
+    statement</code></pre>
+            </p>
+            <strong><em>Labeled</em></strong>
+            <p>Label provides loops with an identifier so that it can be referred to later on.</p>
+            <p>
+                <pre><code>label :
+    statement</code></pre>
+            </p>
+            <p>
+                <pre><code>johnLoop:
+while ( theJohn === true) {
+    doSomething();
+}</code></pre>
+            </p>
+            <strong><em>Break</em></strong>
+            <p>The break statement is used to stop a loop. It can be used with labeled statements as well.</p>
+            <p>
+                <pre><code>break;
+break [label];</code></pre>
+            </p>
+            <strong><em>Continue</em></strong>
+            <p>Continue is used to restart a while, do-while, for, or label loop. It end the current iteration of the
+                loop and continues execution of the loop with its next iteration.</p>
+            <p>
+            <code>continue [label];</code>
+            <code>let i = 0;
+let n = 0;
+while (i < 5) {
+    i++;
+    if (i === 3) {
+    continue;  // when i becomes 3 this 
+    continue statement causes the 
+    loop to reset back to i++ and become 4
+    }
+    n += i;
+    console.log(n);
+}
+//1,3,7,12
+
+
+let i = 0; 
+let n = 0; 
+while (i < 5) { 
+    i++; 
+    if (i === 3) { 
+        // continue; 
+    } 
+    n += i; 
+    console.log(n);
+}
+// 1,3,6,10,15</code>
+            </p>
+            <strong><em>For...in</em></strong>
+            <p>The for...in statement is used to iterate over enumerable properties in an object.</p>
+            <p>
+                <code>
+const object = { x: 1, y: 2, z: 3 };
+
+for (const property in object)
+    console.log(`${property}: ${object[property]}`)
+}
+
+// "x: 1"
+// "y: 2"
+// "z: 3"</code>
+<
+            </p>
+            <strong><em>For...of</em></strong>
+            <p>The for...of loop iterates through all values of iterable objects such as Arrays, Strings, Maps, and
+                NodeLists.</p>
+            <p>
+                <pre><code>
+const array = ['0', '1', '2']
+
+for (const element of array) {
+    console.log(element)
+}
+
+// "0"
+// "1"
+// "2"
+</code></pre>
+            </p>
+        </section>
+        <section id="Functions" class="main-section">
+            <header>Functions</header>
+            <p>A function is a block of code designed to complete a specified task. Functions can take zero or more
+                parameters. The body of the function can take as many statements as necessary. Variables are allowed to
+                be declared inside of functions. Functions can return values using the return keyword. If no return
+                statement is issued a function will return <code>undefined</code>.</p>
+            <pre>
+<code>
+function add(x, y) {
+    var total = x + y;
+    return total;
+}</code></pre>
+        </section>
+        <section id="Arrays" class="main-section">
+            <header>Arrays</header>
+            <p>Arrays are lists of items. Each item in an array is called an element.</p>
+            <code>
+            
+const things = ["watch", "book", "phone"]
+
+            </code>
+            <p><strong><em>Indexes</em></strong></p>
+            Each string in the <code>things</code> array is its own element and have indexes, starting with 0.The
+            "watch" element in this array is at index 0 and can be called as follows:
+            <code>
+                <pre>
+things[0] // watch
+</pre>
+            </code>
+            <p><strong><em>Mutability</em></strong></p>
+            <p>Elements in an array are mutable, meaning that they can be changed.</p>
+        <code>things[0] = "ring"
+console.log(things) // ['ring', 'book', 'phone']
+</code>
+
+            A helpful property to determine the amount of elements in an array is <code>.length</code>.
+            <pre><code>console.log(things.length) // 3</code></pre>
+        </section>
+        <section id="Objects" class="main-section">
+            <header>Objects</header>
+            <p>Objects are a data type in JavaScript that is used to store keyed collections. They are preferred over
+                arrays when the data to be stored is more complex.</p>
+            <pre><code>const character1 = {
+    Name: "Morthul",
+    Class: "Warlock"
+    Specialization: Destruction,
+    Level: 50,
+    War Mode: True
+}
+</code></pre>
+            <strong><em>Key-Value Pairs</em></strong>
+            <p>Each key in an object has a respective vaslue. The data before the <code>:</code> is the key. Data after
+                the <code>:</code> is the value. To call a specific value in an object you can use either dot or bracket
+                notation. Bracket notation is best for when keys have spaces as dot notation will not work.</p>
+<br>
+                <p>
+<code>character1.Name // Morthul (using dot notation)
+character1['War Mode'] // true (using bracket notation)    
+</code>
+</p>
+        </section>
+    </main>
+
+    
+
+</body>
+
+</html>
